@@ -1,4 +1,4 @@
-angular.module('alberti_web').config ($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider) ->
+angular.module('alberti_web').config ($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider, $locationProvider) ->
 
   $translateProvider.translations('it', lang_it)
 
@@ -8,13 +8,18 @@ angular.module('alberti_web').config ($stateProvider, $urlRouterProvider, $httpP
 
   $translateProvider.preferredLanguage('it');
 
+  $locationProvider.html5Mode(
+    enabled: true,
+    requireBase: false,
+  );
+
   # routes
 
   $stateProvider.state 'home',
-    url: '/home'
+    url: '/'
     views: '':
 	    templateUrl: 'templates/home.html'
 	    controller: 'HomeController'
 
-  $urlRouterProvider.otherwise '/home'
+  $urlRouterProvider.otherwise '/'
 

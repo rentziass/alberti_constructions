@@ -66,7 +66,7 @@ gulp.task('coffee', function(done) {
 
 gulp.task('jade', function(done) {
   var YOUR_LOCALS = {};
-  
+
   gutil.log(gutil.colors.yellow('Processing JADE File...'));
 
   gulp.src(paths.jade)
@@ -101,7 +101,7 @@ gulp.task('webserver', function() {
       livereload: true,
       directoryListing: false,
       open: false,
-      host: '192.168.1.54',
+      host: 'localhost',
       port: 7391
     }));
 });

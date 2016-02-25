@@ -37,6 +37,7 @@ footer
 
   .footer_right
     +flex(1 0 200px)
+    display: inline-block
     margin: auto 0px auto auto
 
     +small
@@ -71,14 +72,15 @@ footer
 
     .facebook
       margin: 10px auto
-      margin-right: 0px
       display: block
+      margin-right: 60px
       width: 60px
       height: 60px
       line-height: 60px
       text-align: center
       font-size: 50px
-      border-radius: 5px
+      border-top: 1px solid $gray
+      border-bottom: 1px solid $gray
 
       +transition ( all .15s ease-in-out )
 

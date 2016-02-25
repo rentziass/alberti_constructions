@@ -23,12 +23,16 @@ angular.module('alberti_web').run(function($rootScope, $translate, $document) {
   return ga('send', 'pageview');
 });
 
-angular.module('alberti_web').config(function($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider) {
+angular.module('alberti_web').config(function($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider, $locationProvider) {
   $translateProvider.translations('it', lang_it);
   $translateProvider.translations('en', lang_en);
   $translateProvider.preferredLanguage('it');
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
   $stateProvider.state('home', {
-    url: '/home',
+    url: '/',
     views: {
       '': {
         templateUrl: 'templates/home.html',
@@ -36,7 +40,7 @@ angular.module('alberti_web').config(function($stateProvider, $urlRouterProvider
       }
     }
   });
-  return $urlRouterProvider.otherwise('/home');
+  return $urlRouterProvider.otherwise('/');
 });
 
 angular.module('alberti_web').controller('ContactsController', function($scope, Mandrill) {

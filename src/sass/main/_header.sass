@@ -63,6 +63,29 @@ header
       +small
         max-width: 90%
 
+  .actions
+    text-align: center
+
+    .button
+      position: relative
+      display: inline-block
+      margin: 15px
+      padding: 10px 20px
+      border-radius: 5px
+      border: none
+      background: $gray
+      color: $blue
+      font-size: 16px
+      font-weight: 700
+      z-index: 2
+      text-decoration: none
+      text-transform: uppercase
+
+      +transition ( all .15s ease-in-out )
+
+      &:active
+        background: darken($gray, 25%)
+
   .activities
     +display ( flex )
     +flex-direction ( row )
