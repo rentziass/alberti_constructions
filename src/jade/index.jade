@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" name="viewport")
+    meta(name='description', content='UN TEAM DINAMICO E COMPETENTE NEL BUSINESS E NEL WEB​, Disegniamo strategie di business estero e utilizziamo gli strumenti web piú adatti​.')
+    meta(name='author', content='')
+    title Alberti Business D.I.
+
+    link(href="css/normalize.css" rel="stylesheet")
+    link(href="css/app.min.css" rel="stylesheet")
+    
+    //- ionic/angularjs js
+    script(src="lib/angular/angular.min.js")
+    script(src="lib/angular-translate/angular-translate.min.js")
+    script(src="lib/angular-scroll/angular-scroll.min.js")
+    script(src="lib/angular-ui-router/release/angular-ui-router.min.js")
+    
+    //- your app's js
+    script(src="js/application.js")
+        
+  body(ng-app="alberti_web")
+    ng-include(src="'templates/shared/header.html'")
+    .ui_view_container(ui-view class="view-frame animate-view" autoscroll="false")

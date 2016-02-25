@@ -1,0 +1,114 @@
+
+// Main
+
+body 
+  background: $blue
+  font-family: "Source Sans Pro", sans-serif
+  -webkit-font-smoothing: antialiased
+
+// Helpers
+
+.margin_auto
+  margin: auto !important
+
+.no_margin
+  margin: 0px !important
+
+.no_margin_right
+  margin-right: 0px !important
+
+.no_margin_left
+  margin-left: 0px !important
+
+.no_margin_bottom
+  margin-bottom: 0px !important
+
+.no_margin_top
+  margin-top: 0px !important
+
+// Page Layout
+
+.page
+  position: relative
+  background-color: white
+  width: 100vw
+  min-height: 100vh
+
+  +display ( flex )
+  +flex-direction ( column )
+  +justify-content ( space-around )
+  +align-items ( center)
+
+  &.darker_bg
+    background: $gray
+
+  .page_content
+    position: relative
+    z-index: 2
+    margin: auto
+    width: 100vw
+    padding: 30px
+    box-sizing: border-box
+
+
+// Visual Helpers
+
+a, a:active, a:visited
+  color: $azure
+
+.arrow
+  position: relative
+  cursor: pointer
+  z-index: 2
+  width: 60px
+  height: 60px
+  line-height: 60px
+  text-align: center
+  font-family: "Ionicons"
+  color: white
+  font-size: 50px
+  margin: auto
+
+  +transition ( all .15s ease-in-out )
+  +transform ( scale(1) )
+  +transform-origin ( 50% 50% )
+
+  +small
+    margin: 60px
+
+  &:hover
+    +transform ( scale(1.1) )
+
+  &:active
+    +transform ( scale(.85) )
+
+  &.dark
+    color: #444
+
+  &.down
+    &:before
+      content: '\f123'
+
+  &.up
+    &:before
+      content: '\f126'
+
+h2.title
+  position: relative
+  margin: 30px auto 15px auto
+  padding: 7px 0px
+  color: #061223
+  font-size: 36px
+  font-weight: 500
+
+  &:after
+    content: ''
+    position: absolute
+    display: block
+    width: 70%
+    height: 2px
+    bottom: 0px
+    left: 15%
+    right: 15%
+    top: auto
+    background: #061223

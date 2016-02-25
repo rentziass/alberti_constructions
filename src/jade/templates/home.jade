@@ -1,0 +1,74 @@
+//- button(ng-click="changeLang('it')") IT
+//- button(ng-click="changeLang('en')") EN
+
+.page#contacts(ng-controller="ContactsController")
+  .arrow.up.dark.no_margin_bottom(ng-click="scrollToElement('header')")
+  
+  h2.title Contattaci
+
+  .page_content.no_margin_top.no_margin_bottom
+    .contacts
+      form.contacts_form#message-form(name="contact_form" ng-submit="sendEmail($event)")
+        .form_group
+          label(for='full-name') Nome e Cognome*
+          input#full-name(type='text' placeholder='Nome e Cognome' required='' ng-model="contact_form_data.full_name" ng-disabled="contact_form_data.send_success || is_sending")
+        .form_group
+          label(for='email-field') Email*
+          input#email-field(type='email' placeholder='Email' required='' ng-model="contact_form_data.email" ng-disabled="contact_form_data.send_success || is_sending")
+        .form_group
+          label(for='message-field') Messaggio
+          textarea#message-field(rows='5' placeholder="Il tuo messaggio" ng-model="contact_form_data.message" ng-disabled="contact_form_data.send_success || is_sending")
+        .form_group
+          label.fake
+          .notice(ng-show="contact_form.$submitted")
+            p.success(ng-show="contact_form_data.send_success")
+              | Messaggio inviato con successo. Grazie per aver scelto Alberti Business, sarai contattato al più presto.
+            p.error(ng-show="!contact_form_data.full_name || !contact_form_data.email || !contact_form_data.message")
+              | Impossibile inviare il messaggio, per favore controlla di aver inserito correttamente tutti i dati richiesti.
+        .form_group
+          button.button.blue(type="submit" ng-class="{'sending': is_sending, 'success': contact_form_data.send_success}" ng-disabled="contact_form_data.send_success || is_sending")
+            span(ng-show="!contact_form_data.send_success") Invia
+            span(ng-show="contact_form_data.send_success") Messaggio Inviato!
+
+
+  .arrow.down.dark.no_margin_top(ng-click="scrollToElement('partners')")
+
+.page.darker_bg.with_footer#partners
+  .arrow.up.dark.no_margin_bottom(ng-click="scrollToElement('contacts')")
+  
+  h2.title Partners
+
+  .page_content.no_margin_top
+    .partners
+      .partners_list
+        .partner
+          p Alberti Business
+          a(href="http://www.albertibusiness.com" target="_blank") albertibusiness.com
+        .partner
+          p Management & Events
+          a(href="http://www.management-events.ch" target="_blank") management-events.ch
+        .partner
+          p Living Business
+          a(href="http://livingbusiness.it" target="_blank") livingbusiness.it
+
+  footer
+    .footer_left
+      h4 Alberti Constructions
+      p
+        | Via San Gottardo, 51
+        br
+        | CH 6780 Airolo (Ticino)
+      p
+        | Reg.Comm: CH-501.1.017.308-8
+        br
+        | P.IVA: CHE-381.509.556
+        
+    .footer_right
+      a.mail_me(href="mailto:info@albertibusiness.com")
+        i.icon.ion-ios-email
+        span info@albertibusiness.com
+
+      a.ion-social-facebook.facebook(href="https://www.facebook.com/Alberti-Business-306573672866103/" target="_blank")
+
+      p.copy Copyright &copy; Alberti Business 2014
+

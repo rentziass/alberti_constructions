@@ -1,0 +1,116 @@
+footer
+  padding: 30px 45px
+  margin: auto 0px 0px 0px
+  width: 100vw
+  background: $blue
+  box-sizing: border-box
+  
+  +display ( flex )
+  +flex-direction ( row )
+  +justify-content ( space-between )
+  +align-items ( center )
+
+  +flex-wrap ( wrap )
+
+  .footer_left
+    +flex(1 0 200px)
+    margin: auto auto auto 0px
+
+    +small
+      margin: auto
+      margin-bottom: 30px
+      text-align: center
+    
+    h4
+      margin: 0px
+      margin-bottom: 10px
+      padding: 0px
+      color: $gray
+      font-size: 22px
+
+    p
+      color: $gray
+      padding: 0px
+      margin: 0px
+      margin-bottom: 5px
+      font-size: 15px
+
+  .footer_right
+    +flex(1 0 200px)
+    margin: auto 0px auto auto
+
+    +small
+      margin: auto
+
+    .mail_me
+      text-align: right
+      display: block
+      margin: 0px auto
+      margin-right: 0px
+      padding: 0px
+      text-decoration: none
+
+      +small
+        text-align: center
+
+      i
+        font-family: "Ionicons"
+        color: white !important
+        margin: 0px
+        padding: 0px
+        margin-right: 7px !important
+        font-size: 20px
+        line-height: 16px
+
+      span
+        margin: 0px
+        padding: 0px
+        vertical-align: top
+        line-height: 16px
+        font-size: 15px
+
+    .facebook
+      margin: 10px auto
+      margin-right: 0px
+      display: block
+      width: 60px
+      height: 60px
+      line-height: 60px
+      text-align: center
+      font-size: 50px
+      border-radius: 5px
+
+      +transition ( all .15s ease-in-out )
+
+      +small
+        text-align: center
+        margin-right: auto
+
+      &:hover
+        background: rgba($azure, .2)
+
+    .copy
+      margin: auto
+      margin-right: 0px
+      position: relative
+      padding: 7px 0px
+      color: tint($blue, 45%)
+      font-size: 15px
+      text-align: right
+
+      +small
+        text-align: center
+
+      &:after
+        content: ''
+        position: absolute
+        display: block
+        width: 70%
+        height: 2px
+        bottom: 0px
+        left: 15%
+        right: 15%
+        top: auto
+        background: #061223
+
+

@@ -1,0 +1,120 @@
+header
+  background-image: url(../img/zurigo.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  padding-top: 150px
+  box-sizing: border-box
+
+  &:before
+    content: ''
+    z-index: 1
+    position: absolute
+    display: block
+    // background: rgba(6, 18, 61, .4)
+    background: rgba(6, 18, 35, .75)
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+  
+  .logo
+    position: absolute
+    z-index: 2
+    top: 30px
+    left: 30px
+    width: 100%
+    max-width: 375px
+    background-image: url(../img/logo_new.png)
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+
+    &:before
+      content: ''
+      display: block
+      padding-top: 18%
+
+    +small
+      width: auto
+      top: 30px
+      left: 60px
+      right: 60px
+
+  h3
+    margin: auto
+    margin-bottom: 15px
+    color: white
+    font-weight: 500
+    font-size: 18px
+    line-height: 26px
+    text-align: center
+    text-transform: uppercase
+
+    +small
+      font-size: 14px
+      line-height: 22px
+      margin-bottom: 10px
+
+    &.subtitle
+      max-width: 70%
+      text-transform: none
+
+      +small
+        max-width: 90%
+
+  .activities
+    +display ( flex )
+    +flex-direction ( row )
+    +flex-wrap ( wrap )
+    +justify-content ( center )
+    +align-items ( top )
+    padding: 15px 0px
+    margin: 0px
+
+    // +medium
+    //   +align-items(center)
+
+    ul
+      +flex( 1 0 150px )
+      padding: 0px
+      margin: 15px
+      min-width: 150px
+      max-width: 230px
+
+      li
+        padding: 7px 0px
+        margin: auto 0px
+        list-style: none
+        font-size: 14px
+        line-height: 24px
+        color: white
+        text-transform: uppercase
+        text-align: center
+        border-bottom: 1px solid rgba(white, .3)
+
+        &:last-child
+          border-bottom: none
+
+      +small
+        margin: 10px
+        text-align: center
+        padding-bottom: 15px
+        border-bottom: 1px solid rgba(white, .3)
+
+        &:last-child
+          border-bottom: none
+
+        li
+          display: inline-table !important
+          border-bottom: none
+          line-height: 22px
+          padding: 0px
+
+          &:after
+            content: ',\00a0'
+
+          &:last-child
+            &:after
+              content: ''
+

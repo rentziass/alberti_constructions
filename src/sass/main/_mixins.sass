@@ -1,0 +1,42 @@
+// Responsive contents
+
+=small
+  @media screen and (max-width: 600px)
+    @content
+
+=medium
+  @media screen and (max-width: 768px)
+    @content
+
+=large
+  @media screen and (min-width: 1200px)
+    @content
+
+// Prefix property for all browsers
+
+=prefix($prop, $var)
+  +prefixer ($prop, $var, webkit moz ms o spec)
+
+// Border Box Mixin
+
+=borderbox
+  box-sizing: border-box
+
+// Box Shadow Mixin
+
+=box-shadow ($var)
+  +prefixer (box-shadow, $var, webkit moz ms o spec)
+
+// Text Shadow Mixin
+
+=text-shadow ($var)
+  +prefixer(text-shadow, $var, webkit moz ms o spec)
+
+// Fill the old way
+
+=fillthebox
+  position: absolute
+  top: 0px
+  left: 0px
+  bottom: 0px
+  right: 0px

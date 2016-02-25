@@ -1,0 +1,41 @@
+.partners
+  margin: auto
+  max-width: 1000px
+
+  .partners_list
+    +display ( flex )
+    +flex-direction ( row )
+    +justify-content ( space-around )
+    +align-items ( center )
+    +flex-wrap( wrap )
+
+    +small
+        margin: 30px auto
+
+    .partner
+      +flex(1 0 200px)
+      margin: 15px
+      text-align: center
+      min-width: 200px
+      max-width: 250px
+
+      &:first-child
+        margin-left: auto
+
+      &:last-child
+        margin-right: auto
+
+      +small
+        margin: 15px auto
+
+      p
+        margin: 0px
+        margin-bottom: 10px
+        padding: 0px
+        font-size: 17px
+        color: #666
+        font-weight: 700
+
+      a
+        margin: 0px
+        padding: 0px
